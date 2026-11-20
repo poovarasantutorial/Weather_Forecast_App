@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#172554">
+  <title>Weather Forecast App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="app-shell">
+    <section class="weather-card" aria-labelledby="app-title">
+      <div class="topline"><span class="live-dot"></span> LIVE WEATHER</div>
+      <h1 id="app-title">Weather Forecast</h1>
+      <p class="subtitle">Check current weather conditions anywhere.</p>
+
+      <form id="search-form" class="search-form">
+        <label class="sr-only" for="city-input">City name</label>
+        <input id="city-input" type="search" placeholder="Enter a city (e.g. Chennai)" autocomplete="off" required>
+        <button id="city-input-btn" type="submit">Get Weather</button>
+      </form>
+
+      <p id="status" class="status" role="status" aria-live="polite">Loading weather for Chennai…</p>
+
+      <section id="weather-info" class="weather-info" hidden aria-live="polite">
+        <div class="location-row">
+          <div>
+            <p class="eyebrow">CURRENT WEATHER</p>
+            <h2 id="city-name">—</h2>
+            <p id="date" class="date-text">—</p>
+          </div>
+          <div id="weather-icon" class="weather-icon" aria-hidden="true">🌤️</div>
+        </div>
+        <p id="description" class="description">—</p>
+        <p id="temperature" class="temperature">—</p>
+        <div class="details-grid">
+          <article class="detail"><span class="detail-icon">🌡️</span><div><p class="detail-label">Feels like</p><p id="feels-like" class="detail-value">—</p></div></article>
+          <article class="detail"><span class="detail-icon">💧</span><div><p class="detail-label">Humidity</p><p id="humidity" class="detail-value">—</p></div></article>
+          <article class="detail"><span class="detail-icon">💨</span><div><p class="detail-label">Wind speed</p><p id="wind-speed" class="detail-value">—</p></div></article>
+          <article class="detail"><span class="detail-icon">🌧️</span><div><p class="detail-label">Precipitation</p><p id="precipitation" class="detail-value">—</p></div></article>
+        </div>
+      </section>
+      <footer>Weather data provided by Open-Meteo</footer>
+    </section>
+  </main>
+</body>
+</html>
